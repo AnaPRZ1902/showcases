@@ -1,11 +1,15 @@
 import Link from "next/link" 
 
+
 const links = [{
   label: 'home',
   route: '/'
 },{
   label: 'About',
   route: '/about'
+},{
+  label: 'Posts',
+  route: '/posts'
 } ]
 
 export default function Navigation({children}) {
@@ -15,11 +19,11 @@ export default function Navigation({children}) {
         <title>Una app nueva por que soy un torombolo </title>
       </head>
       <body>
-        <header>
+        <header className="styles.header ">
           <nav>
-            <ul>
+            <ul className="styles.navigation">
               {links.map(({label,route})=>(
-                <li key={route}> 
+                <li key={route} className="text-2xl text-red-300"> 
                   <Link href={route}>
                     {label}
                   </Link>
